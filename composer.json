@@ -1,0 +1,18 @@
+{
+    "name": "davidmarsmalow/indonesian-phone",
+    "description": "Indonesian phone number toolkit for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Davidmarsmalow\\IndonesianPhone\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "David"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
