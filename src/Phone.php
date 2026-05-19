@@ -2,6 +2,8 @@
 
 namespace Davidmarsmalow\IndonesianPhone;
 
+use InvalidArgumentException;
+
 class Phone
 {
     public const TYPE_MOBILE = 'mobile';
@@ -82,6 +84,34 @@ class Phone
         }
 
         return '+' . $this->normalize();
+    }
+
+    public function mask(int $visibleStart = 4, int $visibleEnd = 4, string $mask = '*'): ?string
+    {
+        if ($visibleStart < 0 || $visibleEnd < 0) {
+            throw new InvalidArgumentException('Visible digits must be greater than or equal to zero.');
+        }
+
+        if (mb_strlen($mask) !== 1) {
+            throw new InvalidArgumentException('Mask must be exactly one character.');
+        }
+        
+        if (! $this->isValid()) {
+            return null;
+        }
+
+        $number = $this->normalize();
+        $length = mb_strlen($number);
+
+        $maskedLength = $length - ($visibleStart + $visibleEnd);
+
+        if ($maskedLength <= 0) {
+            return $number;
+        }
+
+        $maskedSection = str_repeat($mask, $maskedLength);
+
+        return mb_substr($number, 0, $visibleStart) . $maskedSection . mb_substr($number, -$visibleEnd);
     }
 
     private function hasInvalidCharacters(): bool
