@@ -95,7 +95,7 @@ class Phone
         if (mb_strlen($mask) !== 1) {
             throw new InvalidArgumentException('Mask must be exactly one character.');
         }
-        
+
         if (! $this->isValid()) {
             return null;
         }
