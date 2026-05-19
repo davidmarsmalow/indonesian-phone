@@ -1,5 +1,9 @@
 # Indonesian Phone
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/davidmarsmalow/indonesian-phone.svg)](https://packagist.org/packages/davidmarsmalow/indonesian-phone)
+[![Total Downloads](https://img.shields.io/packagist/dt/davidmarsmalow/indonesian-phone.svg)](https://packagist.org/packages/davidmarsmalow/indonesian-phone)
+[![License](https://img.shields.io/packagist/l/davidmarsmalow/indonesian-phone.svg)](https://packagist.org/packages/davidmarsmalow/indonesian-phone)
+
 Indonesian phone number toolkit for PHP.
 
 ## Installation
