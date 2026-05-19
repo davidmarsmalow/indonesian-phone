@@ -3,16 +3,43 @@
     "description": "Indonesian phone number toolkit for PHP.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "indonesia",
+        "indonesian",
+        "phone",
+        "phone-number",
+        "validation",
+        "e164"
+    ],
     "autoload": {
         "psr-4": {
             "Davidmarsmalow\\IndonesianPhone\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Davidmarsmalow\\IndonesianPhone\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
-            "name": "David"
+            "name": "Kristoforus David Renaldy",
+            "email": "davidrenaldy1@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "minimum-stability": "stable"
 }
