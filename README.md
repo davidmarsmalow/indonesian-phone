@@ -97,6 +97,38 @@ Phone::make('(021) 1234 5678')->toE164(); // +622112345678
 Phone::make('12345')->toE164(); // null
 ```
 
+## WhatsApp Link
+
+Generate WhatsApp links directly from Indonesian phone numbers.
+
+```php
+use Davidmarsmalow\IndonesianPhone\Phone;
+
+Phone::make('0812-3456-7890')->toWhatsappLink();
+
+// https://wa.me/6281234567890
+```
+
+### With Prefilled Message
+
+```php
+Phone::make('0812-3456-7890')
+    ->toWhatsappLink('Hello World');
+
+// https://wa.me/6281234567890?text=Hello+World
+```
+
+### Invalid Number
+
+Returns `null` when the phone number is invalid.
+
+```php
+Phone::make('abc')->toWhatsappLink();
+
+// null
+```
+
+
 ## Masking
 
 `mask()` returns a masked normalized phone number when valid, or `null` when invalid`.
