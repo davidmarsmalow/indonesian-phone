@@ -86,6 +86,21 @@ class Phone
         return '+' . $this->normalize();
     }
 
+    public function toWhatsappLink($text = ''): ?string
+    {
+        if (! $this->isValid()) {
+            return null;
+        }
+
+        $url = 'https://wa.me/' . $this->normalize();
+
+        if ($text !== '') {
+            $url .= '?text=' . urlencode($text);
+        }
+
+        return $url;
+    }
+
     public function mask(int $visibleStart = 4, int $visibleEnd = 4, string $mask = '*'): ?string
     {
         if ($visibleStart < 0 || $visibleEnd < 0) {
